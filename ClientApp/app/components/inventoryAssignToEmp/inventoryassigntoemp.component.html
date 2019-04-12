@@ -1,0 +1,73 @@
+﻿<style type="text/css">
+    td {
+        padding: 10px;
+    }
+</style>
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top:10px;" (click)="onCancel()">New Allocate Hardware</button>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content" style="width:560px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" (click)="onCancel()">&times;</button>
+                <h4 class="modal-title" style="text-align:center"><label>Hardware Allocation</label></h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td>Select User</td>
+                        <td>
+                            <select [(ngModel)]="Modal.userId" (change)="userNameChange(Modal.userId)" class="form-control" style="width: 400px; height: 35px;">
+                                <option value="0">--Select User--</option>
+                                <option *ngFor="let u of userTypeList" value={{u.userId}}>{{u.name}}</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Select Hardware </td>
+                        <td>
+                            <select [(ngModel)]="Modal.hardwareTypeId" (change)="hardwareChange(Modal.hardwareTypeId)" class="form-control" style="width: 400px; height: 35px;">
+                                <option value="0">--Select Hardware Type--</option>
+                                <option *ngFor="let h of hardwareTypeList" value={{h.hardwareTypeId}}>{{h.hardwareType}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="onSave()" style="width: 100px; margin-left: 20px;">{{buttonName}}</button>
+                <button type="button" class="btn btn-default" (click)="onCancel()" data-dismiss="modal" style="margin-left: 50px; width: 100px;">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<p *ngIf="!IssueHardwareList"><em>Loading...</em></p>
+<table class='table' *ngIf="IssueHardwareList">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Hardware Alloceted</th>
+            <th>Issue Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ihlist of IssueHardwareList">
+            <td>{{ihlist.name}}</td>
+            <td>{{ihlist.hardwareType}}</td>
+            <td>{{ihlist.allocationDate | date: 'MM/dd/yyyy'}}</td>  <!--date:'fullDate'-->
+            <td>
+                <a (click)="onDelete(ihlist.id)" style="cursor:pointer;" data-toggle="modal" data-target="#myModalConfirmation"><img src="../../../../Icons/delete.png" title="Delete" /></a> |
+                <a (click)="onEdit(hlist.id)" style="cursor:pointer;" data-toggle="modal" data-target="#myModal"> <img src="../../../../Icons/edit.png" title="Edit" /></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

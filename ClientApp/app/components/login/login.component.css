@@ -1,0 +1,142 @@
+﻿@import url('/css/font-awesome.min.css');
+body {
+    margin: 0;
+    padding: 0;
+    background: #eee;
+    font-family: 'Segoe UI';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clr {
+    clear: both;
+}
+
+.loginMainDv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 660px;
+    width: 100%;
+}
+
+.loginContainer {
+    background: #fff;
+    box-shadow: 0 0 5px #e0dede;
+    min-width: 750px;
+    border-radius: 10px;
+}
+
+.headingTitle {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #373663;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.loginLeftBg {
+    background: url(../../../../images/login.jpg) top left no-repeat;
+    display: block;
+    background-size: cover;
+    min-height: 460px;
+    float: left;
+    width: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.loginForm {
+    float: right;
+    width: 50%;
+    padding: 40px;
+    background: #e2e2e2;
+    height: 100%;
+    min-height: 460px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.loginRow {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+    .loginRow label {
+        display: block;
+        font-weight: 500;
+        color: #373663;
+        font-size: 17px;
+    }
+
+    .loginRow .TextBox {
+        outline: none;
+        border: 1px solid #cecdcd;
+        padding: 8px 5px 8px 40px;
+        width: 100%;
+    }
+
+    .loginRow .fa {
+        position: absolute;
+        bottom: 11px;
+        left: 9px;
+        font-size: 17px;
+        color: #777777;
+        border-right: 1px solid #ccc;
+        padding-right: 7px;
+    }
+
+.loginBtn {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #373663;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    color: #fff;
+    background: #373663;
+    font-weight: bold;
+    transition: 0.5s all ease;
+}
+
+    .loginBtn:hover {
+        text-decoration: none;
+        color: #fff;
+        background: #151431;
+        border: 2px solid #003390;
+    }
+
+
+    
+
+@media screen and (max-width:785px) {
+    .loginLeftBg{display:none; background-image:none;}
+    .loginContainer {
+        background: url(../../../../images/login.jpg) top left no-repeat;
+        display: block;
+        background-size: cover;
+        float: left;
+        width: 90%;
+        min-width: auto;
+        border-radius: 10px;
+        margin: auto;
+    }
+  .loginForm {
+    float: none;
+    width: 80%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.82);
+    height: 100%;
+    margin: 48px auto;
+    min-height:  auto;
+    border-radius:  10px;
+} 
+   .loginRow label{color:#fff;}
+   .headingTitle{color:#fff;}
+}
+
+

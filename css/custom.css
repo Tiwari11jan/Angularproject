@@ -1,0 +1,305 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #eee;
+    font-family: 'Segoe UI';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clr {
+    clear: both;
+}
+
+.loginMainDv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 660px;
+    width: 100%;
+}
+
+.loginContainer {
+    background: #fff;
+    box-shadow: 0 0 5px #e0dede;
+    min-width: 750px;
+    border-radius: 10px;
+}
+
+.headingTitle {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #373663;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.loginLeftBg {
+    background: url(../images/login.jpg) top left no-repeat;
+    display: block;
+    background-size: cover;
+    min-height: 460px;
+    float: left;
+    width: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.loginForm {
+    float: right;
+    width: 50%;
+    padding: 40px;
+    background: #e2e2e2;
+    height: 100%;
+    min-height: 460px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.loginRow {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+    .loginRow label {
+        display: block;
+        font-weight: 500;
+        color: #373663;
+        font-size: 17px;
+    }
+
+    .loginRow .TextBox {
+        outline: none;
+        border: 1px solid #cecdcd;
+        padding: 8px 5px 8px 40px;
+        width: 100%;
+    }
+
+    .loginRow .fa {
+        position: absolute;
+        bottom: 11px;
+        left: 9px;
+        font-size: 17px;
+        color: #777777;
+        border-right: 1px solid #ccc;
+        padding-right: 7px;
+    }
+
+.loginBtn {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #373663;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    color: #fff;
+    background: #373663;
+    font-weight: bold;
+    transition: 0.5s all ease;
+}
+
+    .loginBtn:hover {
+        text-decoration: none;
+        color: #fff;
+        background: #151431;
+        border: 2px solid #003390;
+    }
+
+
+
+
+@media screen and (max-width:785px) {
+    .loginLeftBg {
+        display: none;
+        background-image: none;
+    }
+
+    .loginContainer {
+        background: url(../images/login.jpg) top left no-repeat;
+        display: block;
+        background-size: cover;
+        float: left;
+        width: 90%;
+        min-width: auto;
+        border-radius: 10px;
+        margin: auto;
+    }
+
+    .loginForm {
+        float: none;
+        width: 80%;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.82);
+        height: 100%;
+        margin: 48px auto;
+        min-height: auto;
+        border-radius: 10px;
+    }
+
+    .loginRow label {
+        color: #fff;
+    }
+
+    .headingTitle {
+        color: #fff;
+    }
+}
+
+
+
+/***********HomePage********/
+
+.home {
+    margin-top: 20px;
+}
+
+.homeBanner {
+    background: url('../images/banner2.jpg') top center no-repeat;
+    width: 100%;
+    background-size: cover;
+    min-height: 310px;
+    position: relative;
+    font-size: 39px;
+    color: #fff;
+    z-index: 9999;
+    display: block;
+    font-weight: 500;
+}
+
+    .homeBanner:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        left: 0;
+        z-index: -1;
+    }
+
+    .homeBanner span {
+    position:  absolute;
+    top: 0px;
+    right: 0px;
+    bottom:  0px;
+    left: 0px;
+    margin:  auto;
+    max-width: 310px;
+    height: 60px;
+    }
+
+
+    .homeBanner span:before{
+        content:'';
+        position:absolute;
+        width: 100%;
+        height:2px;
+        background:#fff;
+        bottom: 0px;
+    }
+  .homeBanner strong{
+      font-weight:400;
+      color: #e4144e;
+      padding-right:10px;
+      font-style:italic;
+  }   
+.topHeading {
+    margin-bottom: 0;
+    color: #383838;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-left: 1%;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.dataDropdown {
+    width: 48%;
+    float: left;
+    border-radius: 5px;
+    background: #fff;
+    margin: 15px 1%;
+    border: 1px solid #dadada;
+    box-shadow: 0 0 9px #e0e0e0;
+    padding: 20px 10px;
+}
+
+    .dataDropdown select {
+        width: 100%;
+        height: 30px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+.dataTable {
+    width: 48%;
+    float: left;
+    border-radius: 5px;
+    background: #fff;
+    margin: 15px 1%;
+    border: 1px solid #dadada;
+    box-shadow: 0 0 9px #e0e0e0;
+    color: #383838;
+}
+
+    .dataTable table td, .dataTable table th {
+        padding: 10px !important;
+        font-size: 16px;
+    }
+
+.tableTopClose {
+    text-align: right;
+    padding: 10px 10px 0px 0px;
+}
+
+    .tableTopClose .fa {
+        background: #383838;
+        color: #fff;
+        border-radius: 100%;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        cursor: pointer;
+    }
+
+.bgLightBlue {
+    background: #50a8d2;
+}
+
+.bgGreen {
+    background: #16c162;
+}
+
+.bgPink {
+    background: #d89a10;
+}
+
+.bgLightRed {
+    background: #ef4b62;
+}
+
+
+@media screen and (max-width:480px) {
+
+    .dataDropdown, .dataTable {
+        width: 100%;
+        overflow: auto;
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:850px) {
+
+
+    .dataDropdown, .dataTable {
+        width: 98%;
+        margin: 10px 1%;
+    }
+}
+
+@media screen and (min-width:851px) and (max-width:1100px) {
+}

@@ -1,0 +1,116 @@
+<style type="text/css">
+    td {
+        padding: 10px;
+    }
+</style>
+
+
+
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top:10px;" (click)="onCancel()">Add User</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:560px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" (click)="onCancel()">&times;</button>
+                <h4 class="modal-title">Enter User Details</h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td><b>Name</b></td>
+                        <td><input type="text" [(ngModel)]="Modal.name" placeholder="Enter Name" class="form-control" style="width: 400px;" /></td>
+                    </tr>
+                    <tr>
+                        <td><b>Email</b></td>
+                        <td><input type="text" [(ngModel)]="Modal.email" placeholder="Enter Email" class="form-control" style="width: 400px;" /></td>
+                    </tr>
+                    <tr>
+                        <td><b>Seat No.</b></td>
+                        <td><input type="text" [(ngModel)]="Modal.seatNo" placeholder="Enter Seat Number" class="form-control" style="width: 400px;" /></td>
+                    </tr>
+                    <tr>
+                        <td><b>Select Floor</b></td>
+                        <td>
+                            <select [(ngModel)]="Modal.floorId" class="form-control" style="width: 400px; height: 35px;">
+                                <option value="0">--Select Floor--</option>
+                                <option *ngFor="let f of floorList" value={{f.id}}>{{f.floorNo}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Select Type </b></td>
+                        <td>
+                            <select [(ngModel)]="Modal.userTypeId" class="form-control" style="width: 400px; height: 35px;">
+                                <option value="0">--Select User Type--</option>
+                                <option *ngFor="let u of userTypeList" value={{u.userTypeId}}>{{u.userType}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="onSave()" style="width: 100px; margin-left: 20px;">{{buttonName}}</button>
+                <button type="button" class="btn btn-default" (click)="onCancel()" data-dismiss="modal" style="margin-left: 50px; width: 100px;">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<p *ngIf="!userList"><em>Loading...</em></p>
+<table class='table' *ngIf="userList">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Seat No.</th>
+            <th>Floor No.</th>
+            <th>UserType</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ulist of userList">
+            <td>{{ulist.name}}</td>
+            <td>{{ulist.email}}</td>
+            <td>{{ulist.seatNo}}</td>
+            <td>{{ulist.floorNo}}</td>
+            <td>{{ulist.userType}}</td>
+            <td>
+                <a (click)="setDeleteId(ulist.id)" style="cursor:pointer;" data-toggle="modal" data-target="#myModalConfirmation"><img src="../../../../Icons/delete.png" title="Delete" /></a> |
+                <a (click)="onEdit(ulist.userId)" style="cursor:pointer;" data-toggle="modal" data-target="#myModal"><img src="../../../../Icons/edit.png" title="Edit" /></a>
+                <a [routerLink]="['/viewUserDetail/', ulist.userId]" style="cursor:pointer;">
+                    <img src="../../../../Icons/eye.png" />
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- Delete Confirmation Modal -->
+<div id="myModalConfirmation" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:560px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                Do you want to delete this record ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="onDelete()" data-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link href="~/node_modules/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet" />
+
+<link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="~/node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+
+<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
+
+<script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section scripts {
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+}

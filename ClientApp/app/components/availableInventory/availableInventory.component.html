@@ -1,0 +1,32 @@
+
+<h2> <label>Available Hardware In Stock</label></h2>
+
+
+<p *ngIf="!hardwareList"><em>Loading...</em></p>
+<table class='table' *ngIf="hardwareList">
+    <thead>
+        <tr>
+            <th>Maker Name</th>
+            <th>Model No.</th>        
+            <th>Quantity</th>
+            <th>Purchase Date</th>
+            <th>Vendor Name</th>
+            <th>Hardware Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hlist of hardwareList">
+            <td>{{hlist.make}}</td>
+            <td>{{hlist.modelNo}}</td>          
+            <td>{{hlist.quantity}}</td>
+            <td>{{hlist.purchaseDate | date: 'MM/dd/yyyy'}}</td> 
+            <td>{{hlist.vendorName}}</td>
+            <td>{{hlist.hardwareType}}</td>
+           
+        </tr>
+    </tbody>
+</table>
+
+
+
+

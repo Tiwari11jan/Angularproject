@@ -1,0 +1,48 @@
+
+<body>
+    <section class="home">
+        <div class="homeBanner"><span><strong>Mymind</strong> Infotech</span></div>
+        <div class="container-fluid">
+       
+            <div class="empData">
+                <h2 class="topHeading">Employee Data</h2>
+
+
+                <div class="dataDropdown">
+                    <select [(ngModel)]="Modal.userId" (change)="getAssignHardwarebyUserId(Modal.userId)" class="form-control" style="width: 400px; height: 35px;">
+                        <option value="0">--Select User--</option>
+                        <option *ngFor="let u of userTypeList" value={{u.userId}}>{{u.name}}</option>
+                    </select>
+                </div>
+
+                <!--<h2 class="topHeading">Allocated Hardware</h2>-->
+                <div class="dataTable">
+                    <div class="tableTopClose">
+                        <span class="fa fa-close"></span>
+                    </div>
+
+                    <p *ngIf="!IssueHardwareList"><em>Loading...</em></p>
+                    <table class="table table-hover" *ngIf="IssueHardwareList">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>HardwareType</th>
+                                <th>AllocationDate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let hlist of IssueHardwareList">
+                                <td>{{hlist.name}}</td>
+                                <td>{{hlist.hardwareType}}</td>
+                                <td>{{hlist.allocationDate | date: 'MM/dd/yyyy'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </section>
+
+    <!--<script src="js/bootstrap.min.js"></script>-->
+</body>
